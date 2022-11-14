@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 배치관리자. WebContext -->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/root-context.xml</param-value>
+</context-param>
+<listener>  <!-- Tomcat(WebContainer) 실행 시 Spring(SpringContainer) log가 기록되면서 연동 구조 완성(DI) -->
+<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+
+    <!-- Spring MVC에서 사용할 FrontController 설정-->
+    <servlet>
+        <servlet-name>appServlet</servlet-name>  <!--servlet-name : appServlet 고정-->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param> <!--초기화 시 설정-->
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/servlet-context.xml</param-value>
+        </init-param>
+        <init-param> <!--NoHandlerFoundException 설정-->
+            <param-name>throwExceptionIfNoHandlerFound</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup> <!-- 톰캣 로딩 시 클래스를 미리 로딩해라.-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern> <!-- /: 모든 경로의 요청을 받겠다.-->
+    </servlet-mapping>
+
+</web-app>

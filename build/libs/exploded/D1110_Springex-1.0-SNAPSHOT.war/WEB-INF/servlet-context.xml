@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/mvc
+https://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+    <!--annotation-driven : Spring MVC 설정을 @기반으로 처리한다. MVC 여러 객체를 Bean으로 등록한다.-->
+    <!--<mvc:annotation-driven/>-->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <!--resources : 이미지나 html과 같은 정적 파일 경로를 지정한다.-->
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
+    <!--InternalResourceViewResolver: frontController-view 사이의 설정 담당-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+     <!--11장 스프링 폼 태그 p264 참고. fommatter.LocalDateFomatter 등록-->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="net.ict.d1110_springex.controller.fomatter.LocalDateFormatter"/>
+            </set>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="net.ict.d1110_springex.controller"/>
+
+</beans>

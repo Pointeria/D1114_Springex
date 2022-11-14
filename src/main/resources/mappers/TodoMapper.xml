@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  <!-- dtd: Mapper 생성 표준 규격 -->
+<mapper namespace="net.ict.d1110_springex.mapper.TodoMapper"> <!-- nameSpace: 공간(위치) -->
+    <select id="getTime" resultType="String">
+        select now()
+    </select>
+
+    <insert id="insert">
+        insert into tbl_todo (title, dueDate, writer) values (#{title}, #{dueDate}, #{writer})
+    </insert>
+</mapper>
