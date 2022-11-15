@@ -49,28 +49,49 @@
                     <div class="card-body">
                         <form action="/todo/modify" method="post">
 
+<<<<<<< HEAD
                             <div class="input-group mb-3">
                                 <span class="input-group-text">TNO</span>
                                 <input type="text" name="tno" class="form-control"
                                        value=<c:out value="${dto.tno}"/> readonly>
+=======
+
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">TNO</span>
+                                <input type="text" name="tno" class="form-control"
+                                       value=<c:out value="${dto.tno}"></c:out> readonly>
+>>>>>>> github/master
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Title</span>
                                 <input type="text" name="title" class="form-control"
+<<<<<<< HEAD
                                        value=<c:out value="${dto.title}"/> >
+=======
+                                       value=<c:out value="${dto.title}"></c:out> >
+>>>>>>> github/master
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">DueDate</span>
                                 <input type="date" name="dueDate" class="form-control"
+<<<<<<< HEAD
                                        value=<c:out value="${dto.dueDate}"/> >
+=======
+                                       value=<c:out value="${dto.dueDate}"></c:out> >
+>>>>>>> github/master
 
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Writer</span>
                                 <input type="text" name="writer" class="form-control"
+<<<<<<< HEAD
                                        value=<c:out value="${dto.writer}"/> readonly>
+=======
+                                       value=<c:out value="${dto.writer}"></c:out> readonly>
+>>>>>>> github/master
 
                             </div>
 
@@ -78,7 +99,11 @@
                                 <label class="form-check-label" >
                                     Finished &nbsp;
                                 </label>
+<<<<<<< HEAD
                                 <input class="form-check-input" type="checkbox" name="finished" ${dto.finished?"checked":""}>
+=======
+                                <input class="form-check-input" type="checkbox" name="finished" ${dto.finished?"checked":""} >
+>>>>>>> github/master
                             </div>
 
                             <div class="my-4">
@@ -108,11 +133,27 @@
 
                         const formObj = document.querySelector("form")
 
+<<<<<<< HEAD
+=======
+                        // document.querySelector(".btn-danger").addEventListener("click",function(e) {
+                        //
+                        //     e.preventDefault()
+                        //     e.stopPropagation()
+                        //
+                        //     formObj.action ="/todo/remove"
+                        //     formObj.method ="post"
+                        //
+                        //     formObj.submit()
+                        //
+                        // },false);
+
+>>>>>>> github/master
                         document.querySelector(".btn-danger").addEventListener("click",function(e) {
 
                             e.preventDefault()
                             e.stopPropagation()
 
+<<<<<<< HEAD
                             formObj.action ="/todo/remove"
                             formObj.method ="post"
 
@@ -125,12 +166,18 @@
                             e.preventDefault()
                             e.stopPropagation()
 
+=======
+>>>>>>> github/master
                             formObj.action =`/todo/remove?${pageRequestDTO.link}`
                             formObj.method ="post"
 
                             formObj.submit()
 
+<<<<<<< HEAD
                         },false);*/
+=======
+                        },false);
+>>>>>>> github/master
 
 
                         document.querySelector(".btn-primary").addEventListener("click",function(e) {
@@ -145,23 +192,37 @@
 
                         },false);
 
+<<<<<<< HEAD
                         document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+=======
+                        /*document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+>>>>>>> github/master
 
                             e.preventDefault()
                             e.stopPropagation()
 
                             self.location = "/todo/list";
 
+<<<<<<< HEAD
                         },false);
 
                         /*document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+=======
+                        },false);*/
+
+                        document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+>>>>>>> github/master
 
                             e.preventDefault()
                             e.stopPropagation()
 
                             self.location= `/todo/list?${pageRequestDTO.link}`
 
+<<<<<<< HEAD
                         },false);*/
+=======
+                        },false);
+>>>>>>> github/master
 
 
                     </script>

@@ -87,6 +87,7 @@
                         </div>
 
                         <script>
+<<<<<<< HEAD
                             document.querySelector(".btn-primary").addEventListener("click", function(e){
                                 self.location = "/todo/modify?tno="+${dto.tno}
                             },false)
@@ -110,6 +111,31 @@
                              //   self.location = "/todo/list?${pageRequestDTO.link}"
 
                            // },false)
+=======
+                            /*document.querySelector(".btn-primary").addEventListener("click", function(e){
+                                self.location = "/todo/modify?tno="+${dto.tno}
+                            },false)*/
+
+
+                            document.querySelector(".btn-primary").addEventListener("click", function(e){
+
+                                self.location = `/todo/modify?tno=${dto.tno}&${pageRequestDTO.link}`
+
+                            },false)
+
+
+
+                            // document.querySelector(".btn-secondary").addEventListener("click", function(e){
+                            //     self.location = "/todo/list";
+                            // },false)
+
+                            //목록 페이지로 이동하는 이벤트 처리
+                            document.querySelector(".btn-secondary").addEventListener("click", function(e){
+
+                                self.location = "/todo/list?${pageRequestDTO.link}"
+
+                            },false)
+>>>>>>> github/master
 
                         </script>
 
