@@ -44,5 +44,4 @@
     <!-- Bean 등록 -->
     <context:component-scan base-package="net.ict.d1110_springex.service"/>
 
-
 </beans>

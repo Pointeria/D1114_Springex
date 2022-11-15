@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
@@ -34,4 +35,33 @@ public class TodoMapperTest {
                 build();
         tM.insert(tVO);
     }
+
+    @Test
+    public void testSelectAll() {
+        List<TodoVO> list = tM.selectAll();
+        list.forEach(vo -> log.info(vo));
+    }
+
+    @Test
+    public void testDelete() {
+        tM.delete((long)2);
+    }
+
+    @Test
+    public void testUpdate() {
+        TodoVO tVO = TodoVO.builder().
+                tno(Long.valueOf("10")).
+                title("update test").
+                dueDate(LocalDate.now()).
+                writer("ict05").
+                build();
+        tM.update(tVO);
+    }
+
+    @Test
+    public void testSelectOne() {
+        TodoVO list = tM.selectOne((long)2);
+        log.info(list);
+    }
+
 }

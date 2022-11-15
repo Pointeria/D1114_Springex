@@ -23,10 +23,12 @@ https://www.springframework.org/schema/context/spring-context.xsd">
     </bean>
 
      <!--11장 스프링 폼 태그 p264 참고. fommatter.LocalDateFomatter 등록-->
+    <!-- 여기 등록되면 공통기능으로 제공된다 -->
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="formatters">
             <set>
                 <bean class="net.ict.d1110_springex.controller.fomatter.LocalDateFormatter"/>
+                <bean class="net.ict.d1110_springex.controller.fomatter.CheckboxFormatter"/>
             </set>
         </property>
     </bean>
