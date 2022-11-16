@@ -40,15 +40,17 @@ public class TodoServicelmql implements TodoService {
     @Override
     public PageResponseDTO<TodoDTO> getList(PageRequestDTO pageRequestDTO) {
         List<TodoVO> voList = tM.selectList(pageRequestDTO);
-        List<TodoDTO> dtoList = voList.stream().
-                map(vo -> mM.map(vo, TodoDTO.class)).
-                collect(Collectors.toList());
+        List<TodoDTO> dtoList = voList.stream()
+                .map(vo -> mM.map(vo, TodoDTO.class))
+                .collect(Collectors.toList());
+
         int total = tM.getCount(pageRequestDTO);
-        PageResponseDTO<TodoDTO> pageResponseDTO = PageResponseDTO.<TodoDTO>withAll().
-                pageRequestDTO(pageRequestDTO).
-                dtoList(dtoList).
-                total(total).
-                build();
+
+        PageResponseDTO<TodoDTO> pageResponseDTO = PageResponseDTO.<TodoDTO>withAll()
+                .dtoList(dtoList)
+                .total(total)
+                .pageRequestDTO(pageRequestDTO)
+                .build();
         return pageResponseDTO;
     }
 

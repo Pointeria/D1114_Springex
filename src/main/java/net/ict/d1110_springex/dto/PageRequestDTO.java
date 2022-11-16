@@ -51,32 +51,34 @@ public class PageRequestDTO {
         return Arrays.stream(types).anyMatch(type::equals);
     }
 
-    public String getLink() {
+    public String getLink(){
         StringBuilder builder = new StringBuilder();
         builder.append("page=" + this.page);
         builder.append("&size=" + this.size);
-        if (finished) {
+        if (finished){
             builder.append("&finished=on");
         }
-        if (types != null && types.length>0) {
-            for (int i = 0; i<types.length; i++) {
+        if (types != null && types.length > 0){
+            for (int i = 0; i < types.length; i++){
                 builder.append("&types=" + types[i]);
             }
         }
-        if (keyword != null) {
+        if (keyword != null){
             try {
                 builder.append("&keyword=" + URLEncoder.encode(keyword, "UTF-8"));
-            } catch (UnsupportedEncodingException e) {
+            }catch (UnsupportedEncodingException e){
                 e.printStackTrace();
             }
         }
-        if (from != null) {
+        if(from != null){
             builder.append("&from=" + from.toString());
         }
-        if (to != null) {
+        if(to != null){
             builder.append("&to=" + to.toString());
         }
+
         return builder.toString();
+
     }
 
 }

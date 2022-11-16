@@ -3,6 +3,7 @@ package net.ict.d1110_springex.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import net.ict.d1110_springex.dto.PageRequestDTO;
+import net.ict.d1110_springex.dto.PageResponseDTO;
 import net.ict.d1110_springex.dto.TodoDTO;
 import net.ict.d1110_springex.service.TodoService;
 import org.springframework.stereotype.Controller;
@@ -76,7 +77,7 @@ public class TodoController {
     }
 
     @GetMapping({"/read", "/modify"})
-    public void readGet(Long tno, Model m) {
+    public void readGet(PageRequestDTO pageRequestDTO, Long tno, Model m) {
         TodoDTO dto = todoService.getOne(tno);
         log.info(dto);
         m.addAttribute("dto", dto);

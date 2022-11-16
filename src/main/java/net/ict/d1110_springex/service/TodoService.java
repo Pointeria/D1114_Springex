@@ -10,7 +10,7 @@ public interface TodoService {
 
     //List<TodoDTO> getAll();  //메소드명을 다르게 쓰는게 좋다
 
-    PageResponseDTO<TodoDTO> getList(PageRequestDTO reqeustDTO);
+    PageResponseDTO<TodoDTO> getList(PageRequestDTO requestDTO);
 
     TodoDTO getOne(Long tno);
 
