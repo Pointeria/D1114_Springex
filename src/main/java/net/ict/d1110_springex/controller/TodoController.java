@@ -2,11 +2,9 @@ package net.ict.d1110_springex.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import net.ict.d1110_springex.controller.fomatter.CheckboxFormatter;
-import net.ict.d1110_springex.domain.TodoVO;
+import net.ict.d1110_springex.dto.PageRequestDTO;
 import net.ict.d1110_springex.dto.TodoDTO;
 import net.ict.d1110_springex.service.TodoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,9 +23,12 @@ public class TodoController {
 //    private final CheckboxFormatter checkboxFormatter;
 
     @RequestMapping("/list")  // 최종경로: todo슬래쉬list
-    public void list(Model model) {
+    public void list(@Valid PageRequestDTO pageRequestDTO, BindingResult bindingResult, Model model) {
         log.info("..................todo list()........................");
-        model.addAttribute("dtoList", todoService.getAll());
+        if (bindingResult.hasErrors()) {
+            pageRequestDTO = PageRequestDTO.builder().build();
+        }
+        model.addAttribute("responseDTO", todoService.getList(pageRequestDTO));
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET) // 최종경로: todo슬래쉬register

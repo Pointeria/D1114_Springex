@@ -3,12 +3,13 @@ package net.ict.d1110_springex.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import net.ict.d1110_springex.domain.TodoVO;
+import net.ict.d1110_springex.dto.PageRequestDTO;
+import net.ict.d1110_springex.dto.PageResponseDTO;
 import net.ict.d1110_springex.dto.TodoDTO;
 import net.ict.d1110_springex.mapper.TodoMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 //DB 처리하는 todoMapper와 DTO-VO 변환을 처리하는 ModelMapper 주입
@@ -29,11 +30,26 @@ public class TodoServicelmql implements TodoService {
         tM.insert(tVO);
     }
 
+//    @Override
+//    public List<TodoDTO> getAll() {           //자바8 이후 stream≒build
+//        List<TodoDTO> dtoList = tM.selectAll().stream().
+//                map(vo -> mM.map(vo, TodoDTO.class)).collect(Collectors.toList());
+//        return dtoList;
+//    }
+
     @Override
-    public List<TodoDTO> getAll() {           //자바8 이후 stream≒build
-        List<TodoDTO> dtoList = tM.selectAll().stream().
-                map(vo -> mM.map(vo, TodoDTO.class)).collect(Collectors.toList());
-        return dtoList;
+    public PageResponseDTO<TodoDTO> getList(PageRequestDTO pageRequestDTO) {
+        List<TodoVO> voList = tM.selectList(pageRequestDTO);
+        List<TodoDTO> dtoList = voList.stream().
+                map(vo -> mM.map(vo, TodoDTO.class)).
+                collect(Collectors.toList());
+        int total = tM.getCount(pageRequestDTO);
+        PageResponseDTO<TodoDTO> pageResponseDTO = PageResponseDTO.<TodoDTO>withAll().
+                pageRequestDTO(pageRequestDTO).
+                dtoList(dtoList).
+                total(total).
+                build();
+        return pageResponseDTO;
     }
 
     @Override

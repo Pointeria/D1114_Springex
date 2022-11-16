@@ -86,18 +86,18 @@
                             </div>
                         </div>
 
+
                         <script>
-<<<<<<< HEAD
                             document.querySelector(".btn-primary").addEventListener("click", function(e){
                                 self.location = "/todo/modify?tno="+${dto.tno}
                             },false)
 
 
-                            //document.querySelector(".btn-primary").addEventListener("click", function(e){
+                            <%--document.querySelector(".btn-primary").addEventListener("click", function(e){--%>
 
-                              //  self.location = `/todo/modify?tno=${dto.tno}&${pageRequestDTO.link}`
+                            <%--    self.location = `/todo/modify?tno=${dto.tno}&${pageRequestDTO.link}`--%>
 
-                            //},false)
+                            <%--},false)--%>
 
 
 
@@ -106,36 +106,11 @@
                              },false)
 
                             //목록 페이지로 이동하는 이벤트 처리
-                           // document.querySelector(".btn-secondary").addEventListener("click", function(e){
-
-                             //   self.location = "/todo/list?${pageRequestDTO.link}"
-
-                           // },false)
-=======
-                            /*document.querySelector(".btn-primary").addEventListener("click", function(e){
-                                self.location = "/todo/modify?tno="+${dto.tno}
-                            },false)*/
-
-
-                            document.querySelector(".btn-primary").addEventListener("click", function(e){
-
-                                self.location = `/todo/modify?tno=${dto.tno}&${pageRequestDTO.link}`
-
-                            },false)
-
-
-
-                            // document.querySelector(".btn-secondary").addEventListener("click", function(e){
-                            //     self.location = "/todo/list";
-                            // },false)
-
-                            //목록 페이지로 이동하는 이벤트 처리
-                            document.querySelector(".btn-secondary").addEventListener("click", function(e){
+                            /*document.querySelector(".btn-secondary").addEventListener("click", function(e){
 
                                 self.location = "/todo/list?${pageRequestDTO.link}"
 
-                            },false)
->>>>>>> github/master
+                            },false)*/
 
                         </script>
 
@@ -164,4 +139,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
-</html>
+</html></html>

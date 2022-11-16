@@ -1,15 +1,16 @@
 package net.ict.d1110_springex.service;
 
-import net.ict.d1110_springex.domain.TodoVO;
+import net.ict.d1110_springex.dto.PageRequestDTO;
+import net.ict.d1110_springex.dto.PageResponseDTO;
 import net.ict.d1110_springex.dto.TodoDTO;
-
-import java.util.List;
 
 public interface TodoService {
 
     void register(TodoDTO dto);
 
-    List<TodoDTO> getAll();  //메소드명을 다르게 쓰는게 좋다
+    //List<TodoDTO> getAll();  //메소드명을 다르게 쓰는게 좋다
+
+    PageResponseDTO<TodoDTO> getList(PageRequestDTO reqeustDTO);
 
     TodoDTO getOne(Long tno);
 

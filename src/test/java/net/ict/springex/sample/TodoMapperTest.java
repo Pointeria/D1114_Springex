@@ -2,7 +2,7 @@ package net.ict.springex.sample;
 
 import lombok.extern.log4j.Log4j2;
 import net.ict.d1110_springex.domain.TodoVO;
-import net.ict.d1110_springex.dto.TodoDTO;
+import net.ict.d1110_springex.dto.PageRequestDTO;
 import net.ict.d1110_springex.mapper.TodoMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -62,6 +62,15 @@ public class TodoMapperTest {
     public void testSelectOne() {
         TodoVO list = tM.selectOne((long)2);
         log.info(list);
+    }
+
+    @Test
+    public void testPage() {
+        PageRequestDTO dto = PageRequestDTO.builder().
+                    page(2).
+                    size(10).build();
+        List<TodoVO> voList = tM.selectList(dto);
+        voList.forEach(vo -> log.info(vo));
     }
 
 }
