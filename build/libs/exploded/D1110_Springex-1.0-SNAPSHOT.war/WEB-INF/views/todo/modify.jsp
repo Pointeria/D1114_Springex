@@ -99,8 +99,15 @@
                                 <label class="form-check-label" >
                                     Finished &nbsp;
                                 </label>
+<<<<<<< HEAD
                                 <input class="form-check-input" type="checkbox" name="finished" ${dto.finished?"checked":""}>
+<<<<<<< HEAD
                                 <input class="form-check-input" type="checkbox" name="finished" ${dto.finished?"checked":""} >
+=======
+=======
+                                <input class="form-check-input" type="checkbox" name="finished" ${dto.finished?"checked":""} >
+>>>>>>> github/master
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
                             </div>
 
                             <div class="my-4">
@@ -130,6 +137,11 @@
 
                         const formObj = document.querySelector("form")
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
                         // document.querySelector(".btn-danger").addEventListener("click",function(e) {
                         //
                         //     e.preventDefault()
@@ -142,11 +154,16 @@
                         //
                         // },false);
 
+<<<<<<< HEAD
+=======
+>>>>>>> github/master
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
                         document.querySelector(".btn-danger").addEventListener("click",function(e) {
 
                             e.preventDefault()
                             e.stopPropagation()
 
+<<<<<<< HEAD
                             formObj.action ="/todo/remove"
                             formObj.method ="post"
 
@@ -159,12 +176,18 @@
                             e.preventDefault()
                             e.stopPropagation()
 
+=======
+>>>>>>> github/master
                             formObj.action =`/todo/remove?${pageRequestDTO.link}`
                             formObj.method ="post"
 
                             formObj.submit()
 
+<<<<<<< HEAD
                         },false);*/
+=======
+                        },false);
+>>>>>>> github/master
 
 
                         document.querySelector(".btn-primary").addEventListener("click",function(e) {
@@ -179,27 +202,52 @@
 
                         },false);
 
+<<<<<<< HEAD
                         document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+<<<<<<< HEAD
                         /*document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+=======
+=======
+                        /*document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+>>>>>>> github/master
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
 
                             e.preventDefault()
                             e.stopPropagation()
 
                             self.location = "/todo/list";
 
+<<<<<<< HEAD
                         },false);
 
                         /*document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+<<<<<<< HEAD
                         },false);*/
 
                         document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+=======
+=======
+                        },false);*/
+
+                        document.querySelector(".btn-secondary").addEventListener("click",function(e) {
+>>>>>>> github/master
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
 
                             e.preventDefault()
                             e.stopPropagation()
 
                             self.location= `/todo/list?${pageRequestDTO.link}`
 
+<<<<<<< HEAD
                         },false);
+=======
+<<<<<<< HEAD
+                        },false);*/
+=======
+                        },false);
+>>>>>>> github/master
+
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
 
                     </script>
 

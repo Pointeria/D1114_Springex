@@ -43,6 +43,11 @@
         <div class="row content">
             <div class="col">
                 <div class="card">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
                     <div class="card-body">
                         <h5 class="card-title">Search </h5>
                         <form action="/todo/list" method="get">
@@ -75,6 +80,10 @@
         <div class="row content">
             <div class="col">
                 <div class="card">
+<<<<<<< HEAD
+=======
+>>>>>>> github/master
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
                     <div class="card-header">
                         Featured
                     </div>
@@ -82,6 +91,7 @@
                         <h5 class="card-title">Special title treatment</h5>
                         <table class="table">
                             <thead>
+<<<<<<< HEAD
                                 <tr>
                                     <th scope="col">Tno</th>
                                     <th scope="col">Title</th>
@@ -110,6 +120,10 @@
     <div class="row content">
 
         <h1>Content</h1>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 0b091aabfb83e09094400a98be4af82253b5b00f
                             <tr>
                                 <th scope="col">Tno</th>
                                 <th scope="col">Title</th>
@@ -234,6 +248,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<<<<<<< HEAD
 <script>
 
         const formObj = document.querySelector("form")

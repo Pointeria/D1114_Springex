@@ -49,49 +49,28 @@
                     <div class="card-body">
                         <form action="/todo/modify" method="post">
 
-<<<<<<< HEAD
                             <div class="input-group mb-3">
                                 <span class="input-group-text">TNO</span>
                                 <input type="text" name="tno" class="form-control"
                                        value=<c:out value="${dto.tno}"/> readonly>
-=======
-
-
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">TNO</span>
-                                <input type="text" name="tno" class="form-control"
-                                       value=<c:out value="${dto.tno}"></c:out> readonly>
->>>>>>> github/master
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Title</span>
                                 <input type="text" name="title" class="form-control"
-<<<<<<< HEAD
                                        value=<c:out value="${dto.title}"/> >
-=======
-                                       value=<c:out value="${dto.title}"></c:out> >
->>>>>>> github/master
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">DueDate</span>
                                 <input type="date" name="dueDate" class="form-control"
-<<<<<<< HEAD
                                        value=<c:out value="${dto.dueDate}"/> >
-=======
-                                       value=<c:out value="${dto.dueDate}"></c:out> >
->>>>>>> github/master
 
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Writer</span>
                                 <input type="text" name="writer" class="form-control"
-<<<<<<< HEAD
                                        value=<c:out value="${dto.writer}"/> readonly>
-=======
-                                       value=<c:out value="${dto.writer}"></c:out> readonly>
->>>>>>> github/master
 
                             </div>
 
@@ -100,7 +79,6 @@
                                     Finished &nbsp;
                                 </label>
                                 <input class="form-check-input" type="checkbox" name="finished" ${dto.finished?"checked":""}>
-                                <input class="form-check-input" type="checkbox" name="finished" ${dto.finished?"checked":""} >
                             </div>
 
                             <div class="my-4">
@@ -129,18 +107,6 @@
                     <script>
 
                         const formObj = document.querySelector("form")
-
-                        // document.querySelector(".btn-danger").addEventListener("click",function(e) {
-                        //
-                        //     e.preventDefault()
-                        //     e.stopPropagation()
-                        //
-                        //     formObj.action ="/todo/remove"
-                        //     formObj.method ="post"
-                        //
-                        //     formObj.submit()
-                        //
-                        // },false);
 
                         document.querySelector(".btn-danger").addEventListener("click",function(e) {
 
@@ -180,7 +146,6 @@
                         },false);
 
                         document.querySelector(".btn-secondary").addEventListener("click",function(e) {
-                        /*document.querySelector(".btn-secondary").addEventListener("click",function(e) {
 
                             e.preventDefault()
                             e.stopPropagation()
@@ -190,16 +155,14 @@
                         },false);
 
                         /*document.querySelector(".btn-secondary").addEventListener("click",function(e) {
-                        },false);*/
-
-                        document.querySelector(".btn-secondary").addEventListener("click",function(e) {
 
                             e.preventDefault()
                             e.stopPropagation()
 
                             self.location= `/todo/list?${pageRequestDTO.link}`
 
-                        },false);
+                        },false);*/
+
 
                     </script>
 
