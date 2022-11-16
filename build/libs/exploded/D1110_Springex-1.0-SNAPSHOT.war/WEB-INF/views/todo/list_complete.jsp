@@ -68,9 +68,9 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
+
 
         <div class="row content">
             <div class="col">
@@ -135,7 +135,7 @@
 
                         <script>
 
-/* document.querySelector(".pagination").addEventListener("click", function (e) {
+ document.querySelector(".pagination").addEventListener("click", function (e) {
         e.preventDefault()
         e.stopPropagation()
 
@@ -148,7 +148,7 @@
         const num = target.getAttribute("data-num")
 
         self.location = `/todo/list?page=\${num}` //백틱(` `)을 이용해서 템플릿 처리
-    },false)*/
+    },false)
 
     document.querySelector(".pagination").addEventListener("click", function (e) {
         e.preventDefault()

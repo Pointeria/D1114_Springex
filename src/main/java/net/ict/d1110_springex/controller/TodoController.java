@@ -72,7 +72,7 @@ public class TodoController {
         }
         log.info(dto);
         todoService.register(dto);
-        return "redirect:/todo/list";
+        return "list_completed";
     }
 
     @GetMapping({"/read", "/modify"})
@@ -87,7 +87,7 @@ public class TodoController {
         log.info("------------remove-----------");
         log.info("tno : "+ tno);
         todoService.delete(tno);
-        return "redirect:/todo/list";
+        return "list_completed";
     }
 
     @PostMapping("/modify")
@@ -102,6 +102,6 @@ public class TodoController {
         }
         log.info(dto);
         todoService.modify(dto);
-        return "redirect:/todo/list";
+        return "list_completed";
     }
 }
